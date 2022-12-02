@@ -1,5 +1,5 @@
 -- DEPENDENCIES
-
+require("graphicsLogicManager")
 
 
 -- CONSTANT DEFINITIONS
@@ -28,5 +28,6 @@ end
 
 function love.draw()
 
+	drawUi()
 
 end
