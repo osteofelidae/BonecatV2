@@ -1,4 +1,5 @@
 -- DEPENDENCIES
+require("helperFunctions")
 require("graphicsLogicManager")
 
 
