@@ -24,7 +24,27 @@ function button(buttonXPosition, buttonYPosition, buttonWidth, buttonHeight, but
 
 end
 
--- 
+-- Function to draw a list of buttons (use with right click menu and file/edit/etc.)
+function buttonList(xPosition, yPosition, buttonWidth, buttonHeight, buttonColor, textColor, textFont, buttonTextTable, buttonActionTable)
+
+	-- Working variables to do surgery on
+	local cursorY = yPosition
+	local index = 1
+
+	-- Loop through tables to create buttons
+	while (index <= #buttonTextTable) do
+
+		-- Create button at correct location
+		button(xPosition, cursorY, buttonWidth, buttonHeight, buttonTextTable[index], buttonColor, textColor, textFont, buttonActionTable[index])
+
+		-- Increment variables
+		index = index + 1
+		cursorY = cursorY + buttonHeight
+
+	end
+
+end
+
 
 -- Function to draw a horizontal menu bar
 function menuBar(yPosition, height, color)
