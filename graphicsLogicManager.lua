@@ -36,7 +36,10 @@ LINE_NUMBER_COLOR = toRGB("#D6D5A8")
 -- Code body (display area)
 CODE_BODY_X = LINE_NUMBER_X + LINE_NUMBER_WIDTH
 CODE_BODY_Y_START = LINE_NUMBER_Y_START
-CODE_BODY_COLOR = toRGB("#000000")
+CODE_BODY_COLOR = toRGB("#FFFFFF")
+CODE_BODY_TEXT_COLOR = toRGB("#000000")
+CODE_BODY_LINE_HEIGHT = 10
+CODE_BODY_TEXT_FONT = love.graphics.newFont("assets/Courier Prime.ttf", CODE_BODY_LINE_HEIGHT)
 
 
 
@@ -46,6 +49,12 @@ function drawUi()
 	
 	-- Background
 	setBackground()
+
+	-- Code body
+	drawCodeBody()
+
+	-- Line number indicator
+	drawLineNumber()
 
 	-- Top menu bar
 	drawTopMenu()
@@ -58,9 +67,6 @@ function drawUi()
 
 	-- Status bar
 	drawStatusBar()
-
-	-- Line number indicator
-	drawLineNumber()
 
 end
 
@@ -128,5 +134,8 @@ function drawCodeBody()
 
 	-- Draw body block
 	bodyBlock(CODE_BODY_X, CODE_BODY_Y_START, (love.graphics.getHeight() - STATUS_BAR_HEIGHT - STATUS_BAR_Y_OFFSET), (love.graphics.getWidth() - LINE_NUMBER_WIDTH), CODE_BODY_COLOR)
+
+	-- Render code text
+	renderText(CODE_BODY_X, CODE_BODY_Y_START, currentVertScrollLevel, currentHorScrollLevel, {"line1", "line2", "line3"}, CODE_BODY_TEXT_COLOR, (love.graphics.getHeight() - STATUS_BAR_HEIGHT - STATUS_BAR_Y_OFFSET - TAB_BAR_Y - TAB_BAR_HEIGHT), CODE_BODY_TEXT_FONT, CODE_BODY_LINE_HEIGHT)
 
 end
