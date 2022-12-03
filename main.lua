@@ -11,6 +11,8 @@ require("graphicsLogicManager")
 
 function love.load()
 
+	-- Window setup function from graphicsLogicManager
+	windowSetup()
 
 end
 
@@ -29,6 +31,7 @@ end
 
 function love.draw()
 
+	-- UI drawer function from graphicsLogicManager
 	drawUi()
 
 end

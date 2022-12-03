@@ -33,6 +33,15 @@ function menuBar(yPosition, height, color)
 
 end
 
+-- Function to draw body block (horisontal menu bar)
+function bodyBlock(xPosition, yStart, yEnd, width, color)
+
+	-- Draw rectangle
+	love.graphics.setColor(color)
+	love.graphics.rectangle("fill", xPosition, yStart, width, yEnd - yStart)
+
+end
+
 -- Function to turn hex into rgb table
 function toRGB(hexString)
 
